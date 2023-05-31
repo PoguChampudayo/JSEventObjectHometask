@@ -17,8 +17,12 @@ class Game {
   }
 
   registerEvents() {
-    
-    /*
+    let current = this.currentSymbol.textContent
+    document.addEventListener('keydown', function(event) {
+      if (event.key.toLowerCase() == current.toLowerCase()) return this.success();
+      else return this.fail();
+    })
+      /*
       TODO:
       Написать обработчик события, который откликается
       на каждый введённый символ.
@@ -88,6 +92,7 @@ class Game {
     this.wordElement.innerHTML = html;
 
     this.currentSymbol = this.wordElement.querySelector('.symbol_current');
+    
   }
 }
 
